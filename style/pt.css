@@ -1,0 +1,57 @@
+/* PAttern by: https://www.magicpattern.design/tools/css-backgrounds */
+
+.fancybgpurple{
+    background-color: #000000;
+    opacity: 0.9;
+    background-image:  linear-gradient(30deg, #3b0b80 12%, transparent 12.5%, transparent 87%, #3b0b80 87.5%, #3b0b80), linear-gradient(150deg, #3b0b80 12%, transparent 12.5%, transparent 87%, #3b0b80 87.5%, #3b0b80), linear-gradient(30deg, #3b0b80 12%, transparent 12.5%, transparent 87%, #3b0b80 87.5%, #3b0b80), linear-gradient(150deg, #3b0b80 12%, transparent 12.5%, transparent 87%, #3b0b80 87.5%, #3b0b80), linear-gradient(60deg, #3b0b8077 25%, transparent 25.5%, transparent 75%, #3b0b8077 75%, #3b0b8077), linear-gradient(60deg, #3b0b8077 25%, transparent 25.5%, transparent 75%, #3b0b8077 75%, #3b0b8077);
+    background-size: 24px 42px;
+    background-position: 0 0, 0 0, 12px 21px, 12px 21px, 0 0, 12px 21px;
+    
+}
+
+.bgbcubes {
+    background-color: #161616;
+    opacity: 0.8;
+    background-image:  linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
+    background-size: 24px 42px;
+    background-position: 0 0, 0 0, 12px 21px, 12px 21px, 0 0, 12px 21px;
+}
+
+.logo {
+    width: 108px;
+    height: 77px;
+}
+
+.anmeldung {
+    border-bottom: 1px solid #fff;
+    margin-bottom:2%;
+}
+
+.input {
+    border-style: none;
+    background-color: transparent;
+    color:white;
+    outline:none;
+}
+
+select option {
+    background-color: #161616;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #11171a;
+  border-radius: 10px;
+}
+
