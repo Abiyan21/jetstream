@@ -1,11 +1,14 @@
 <?php
 
+    // Variable
     $kundenname = $_POST["kundenname"];
     $email = $_POST["email"];
     $tel = $_POST["tel"];
     $days = 0;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        // Datum der Bereitschaft des Services
         function datum()
         {
         if ($_POST["prio"] == 1) {
@@ -22,6 +25,7 @@
         
         require_once 'auftragsql.inc.php';
 
+        // Service Nummer zu String (Service) Ausgabe 
         function service()
         {
         if ($_POST["service"] == 1){
@@ -45,6 +49,7 @@
     
         }
 
+        // Prioritaet Nummer zu String (Prioritaet) Ausgabe
         function prioritaet()
         {
             if ($_POST["prio"] == 1){
@@ -70,30 +75,30 @@
     <title>Document</title>
 </head>
 <body class="bgbcubes">
-<div class="full-width">
-    <div class="container-fluid p-2 bg-dark text-white">
-        <div class="row">
-          <div class="col-md-4 pt-1">
-            <img src="img/logo-really-small.png" class="logo" alt="Logo">
-          </div>
-          <div class="col-md-4 p-3">
-          <ul class="nav nav-pills justify-content-center">
-                <li class="nav-item" style="margin:1%">
-                  <a class="btn btn-outline-light" href="home.html">Home</a>
-                </li>
-                <li class="nav-item" style="margin:1%">
-                  <a class="btn btn-outline-light"  href="kontakt.html">Kontakt</a>
-                </li>
-                <li class="nav-item" style="margin:1%">
-                  <a class="btn btn-outline-light active" href="auftrag.php">Auftrag</a>
-                </li>
-              </ul>
-          </div>
-          <div class="col-md-4 p-3">
-          </div>
+
+  <!-- Navbar -->
+    <div class="full-width">
+        <div class="container-fluid p-2 bg-dark text-white">
+                <div class="row">
+                    <div class="col-md-4 pt-1">
+                        <img src="img/logo-really-small.png" class="logo" alt="Logo">
+                    </div>
+                        <div class="col-md-4 p-3">
+                    <ul class="nav nav-pills justify-content-center">
+                        <li class="nav-item" style="margin:1%">
+                            <a class="btn btn-outline-light" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item" style="margin:1%">
+                            <a class="btn btn-outline-light"  href="kontakt.html">Kontakt</a>
+                        </li>
+                        <li class="nav-item" style="margin:1%">
+                            <a class="btn btn-outline-light active" href="auftrag.php">Auftrag</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
 
   <!-- Titel -->
     <div class="container p-3 my-3 bg-dark text-white">
@@ -101,34 +106,37 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit obcaecati nostrum eius rem voluptas? Explicabo quos laborum quibusdam ipsa! Beatae, nulla praesentium? Molestiae consequatur officia ullam quas, maiores vel animi!</p>
     </div>
 
-  <div class="container p-0">
-  <?php
-    echo '<div class="alert alert-success">';
-    echo '<strong>Auftrag erstellt:</strong>';
-    echo ' Ihr '. service() .' ist am '. datum() .' abholbereit!';
-    echo '</div>';
-  ?>
-  </div>
-  <div class="container p-3 my-3 bg-dark text-white">
-      <dl class="row">
-          <dt class="col-sm-3">Kundenname</dt>
-          <?php echo "<dd class='col-sm-9'>$kundenname</dd>"?>
+  <!-- Success Alert -->
+    <div class="container p-0">
+    <?php
+        echo '<div class="alert alert-success">';
+        echo '<strong>Auftrag erstellt:</strong>';
+        echo ' Ihr '. service() .' ist am '. datum() .' abholbereit!';
+        echo '</div>';
+    ?>
+    </div>
 
-          <dt class="col-sm-3">Email</dt>
-          <?php echo "<dd class='col-sm-9'>$email</dd>"?>
+  <!-- Angaben -->
+    <div class="container p-3 my-3 bg-dark text-white">
+        <dl class="row">
+            <dt class="col-sm-3">Kundenname</dt>
+            <?php echo "<dd class='col-sm-9'>$kundenname</dd>"?>
 
-          <dt class="col-sm-3">Telefonnummer</dt>
-          <?php echo "<dd class='col-sm-9'>$tel</dd>"?>
+            <dt class="col-sm-3">Email</dt>
+            <?php echo "<dd class='col-sm-9'>$email</dd>"?>
 
-          <dt class="col-sm-3">Service</dt>
-          <?php echo "<dd class='col-sm-9'>" . service() . "</dd>"?>
-          
-          <dt class="col-sm-3">Priorität</dt>
-          <?php echo "<dd class='col-sm-9'>" . prioritaet() . "</dd>"?>
+            <dt class="col-sm-3">Telefonnummer</dt>
+            <?php echo "<dd class='col-sm-9'>$tel</dd>"?>
 
-          <dt class="col-sm-3">Abholbereit</dt>
-          <?php echo "<dd class='col-sm-9'>" . datum() . "</dd>"?>
-      </dl>
-  </div>
+            <dt class="col-sm-3">Service</dt>
+            <?php echo "<dd class='col-sm-9'>" . service() . "</dd>"?>
+            
+            <dt class="col-sm-3">Priorität</dt>
+            <?php echo "<dd class='col-sm-9'>" . prioritaet() . "</dd>"?>
+
+            <dt class="col-sm-3">Abholbereit</dt>
+            <?php echo "<dd class='col-sm-9'>" . datum() . "</dd>"?>
+        </dl>
+    </div>
 </body>
 </html>

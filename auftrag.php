@@ -1,7 +1,8 @@
 <?php
+// Vorherige Validierungscode
 
+/*
 $errors = [];
-
 
 $kundenname = $_POST["kundenname"] ?? '';
 $email = $_POST["email"] ?? '';
@@ -23,7 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $errors[] = 'Email ungültig';
     }
 
-}
+}*/
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,19 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="img/logo-really-small.png" class="logo" alt="Logo">
           </div>
           <div class="col-md-4 p-3">
-          <ul class="nav nav-pills justify-content-center">
-                <li class="nav-item" style="margin:1%">
-                  <a class="btn btn-outline-light" href="home.html">Home</a>
-                </li>
-                <li class="nav-item" style="margin:1%">
-                  <a class="btn btn-outline-light"  href="kontakt.html">Kontakt</a>
-                </li>
-                <li class="nav-item" style="margin:1%">
-                  <a class="btn btn-outline-light active" href="auftrag.php">Auftrag</a>
-                </li>
-              </ul>
-          </div>
-          <div class="col-md-4 p-3">
+            <ul class="nav nav-pills justify-content-center">
+              <li class="nav-item" style="margin:1%">
+                <a class="btn btn-outline-light" href="home.html">Home</a>
+              </li>
+              <li class="nav-item" style="margin:1%">
+                <a class="btn btn-outline-light"  href="kontakt.html">Kontakt</a>
+              </li>
+              <li class="nav-item" style="margin:1%">
+                <a class="btn btn-outline-light active" href="auftrag.php">Auftrag</a>
+              </li>
+            </ul>
           </div>
         </div>
     </div>
@@ -70,9 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
   <!-- Eventlist -->
-
+  <!--
   <div class="container p-0">
-    <?php if(count($errors) > 0): ?>
+    <?php /*if(count($errors) > 0): ?>
             <ul class="errors p-0">
                 <?php foreach($errors as $error): ?>
                   <div class="alert alert-danger">
@@ -80,69 +80,75 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   </div>
                 <?php endforeach; ?>
             </ul>
-        <?php endif; ?>
-  </div>
+        <?php endif; */?>
+  </div> -->
 
   <!-- Form -->
   <div class="container p-3 my-3 bg-dark text-white">
-      <form action="<?php echo htmlspecialchars('bestellung.php');?>" method="POST">
+    <form action="<?php echo htmlspecialchars('bestellung.php');?>" method="POST">
 
-          <div class="anmeldung">
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <label for="kundenname" class="col-md-2 col-form-label-lg ">Kundenname</label>
-                <input type="text" pattern="[A-Za-z]{2,}" class="input col-md-8" placeholder="Kundenname" id="kundenname" name="kundenname" required>
-              </div>
-            </div>
+    <!-- Kundenname -->
+      <div class="anmeldung">
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <label for="kundenname" class="col-md-2 col-form-label-lg ">Kundenname</label>
+            <input type="text" pattern="[A-Za-z]{2,}" class="input col-md-8" placeholder="Kundenname" id="kundenname" name="kundenname" required>
           </div>
+        </div>
+      </div>
 
-          <div class="anmeldung">
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <label for="email" class="col-md-2 col-form-label-lg">Email</label>
-                <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="input col-md-8" id="email"placeholder="name@domain.ch" name="email" required>
-              </div>
-            </div>
+    <!-- Email -->    
+      <div class="anmeldung">
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <label for="email" class="col-md-2 col-form-label-lg">Email</label>
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="input col-md-8" id="email"placeholder="name@domain.ch" name="email" required>
           </div>
+        </div>
+      </div>
 
-          <div class="anmeldung">
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <label for="tel" class="col-md-2 col-form-label-lg">Telefon</label>
-                <input type="text" pattern="[0-9]+{3} [0-9]+{3} [0-9]+{2} [0-9]{2}" class="input col-md-8" id="tel" placeholder="049 123 45 67" name="tel" required>
-              </div>
-            </div>
+    <!-- Nummer -->
+      <div class="anmeldung">
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <label for="tel" class="col-md-2 col-form-label-lg">Telefon</label>
+            <input type="text" pattern="[0-9]+{3} [0-9]+{3} [0-9]+{2} [0-9]{2}" class="input col-md-8" id="tel" placeholder="049 123 45 67" name="tel" required>
           </div>
+        </div>
+      </div>
 
-          <div class="anmeldung">
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <label for="prio" class="col-md-2 col-form-label-lg">Priorität</label>
-                <select id="prio" name="prio" class="input">
-                    <option name="prio" value="1" <?php if(empty($_GET["prio"]) || $_GET["prio"] == 1){echo 'selected="selected"';}?>>Tief (12 Tage)</option> 
-                    <option name="prio" value="2" <?php if(isset($_GET["prio"]) && $_GET["prio"] == 2){echo 'selected="selected"';}?>>Standard (7 Tage)</option> 
-                    <option name="prio" value="3" <?php if(isset($_GET["prio"]) && $_GET["prio"] == 3){echo 'selected="selected"';}?>>Express (5 Tage)</option>
-                </select>
+    <!-- Prioritaet & Service -->      
+      <div class="anmeldung">
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <label for="prio" class="col-md-2 col-form-label-lg">Priorität</label>
+            <select id="prio" name="prio" class="input">
+              <option name="prio" value="1" <?php if(empty($_GET["prio"]) || $_GET["prio"] == 1){echo 'selected="selected"';}?>>Tief (12 Tage)</option> 
+              <option name="prio" value="2" <?php if(isset($_GET["prio"]) && $_GET["prio"] == 2){echo 'selected="selected"';}?>>Standard (7 Tage)</option> 
+              <option name="prio" value="3" <?php if(isset($_GET["prio"]) && $_GET["prio"] == 3){echo 'selected="selected"';}?>>Express (5 Tage)</option>
+            </select>
 
-                <label style="margin-left:20%;" for="service" class="col-md-2 col-form-label-lg">Angebot</label>
-                <select id="service" name="service" class="input">
-                    <option name="service" value="1">Kleiner Service</option> 
-                    <option name="service" value="2">Grosser Service</option> 
-                    <option name="service" value="3">Rennski-Service</option> 
-                    <option name="service" value="4">Bindung montieren und einstellen</option> 
-                    <option name="service" value="5">Fell zuschneiden</option> 
-                    <option name="service" value="6">Heisswachsen</option> 
-                </select>
-              </div>
-            </div>
+            <label style="margin-left:20%;" for="service" class="col-md-2 col-form-label-lg">Angebot</label>
+            <select id="service" name="service" class="input">
+              <option name="service" value="1">Kleiner Service</option> 
+              <option name="service" value="2">Grosser Service</option> 
+              <option name="service" value="3">Rennski-Service</option> 
+              <option name="service" value="4">Bindung montieren und einstellen</option> 
+              <option name="service" value="5">Fell zuschneiden</option> 
+              <option name="service" value="6">Heisswachsen</option> 
+            </select>
           </div>
+        </div>
+      </div>
 
-          </br>
-          <div class="d-grid gap-3">
-            <input class="btn btn-outline-light btn-block" type="submit" value="Anmelden"/>
-            <input class="btn btn-outline-light btn-block" type="reset" value="Zurücksetzen"/>
-          </div>
-      </form>
+
+    <!-- Submit & Reset -->        
+      </br>
+      <div class="d-grid gap-3">
+        <input class="btn btn-outline-light btn-block" type="submit" value="Anmelden"/>
+        <input class="btn btn-outline-light btn-block" type="reset" value="Zurücksetzen"/>
+      </div>
+    </form>
   </div>
 
 </body>
