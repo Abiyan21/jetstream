@@ -92,7 +92,10 @@
                             <a class="btn btn-outline-light"  href="kontakt.html">Kontakt</a>
                         </li>
                         <li class="nav-item" style="margin:1%">
-                            <a class="btn btn-outline-light active" href="auftrag.php">Auftrag</a>
+                            <a class="btn btn-outline-light" href="auftrag.php">Auftrag</a>
+                        </li>
+                        <li class="nav-item" style="margin:1%">
+                            <a class="btn btn-outline-light active">Bestellung</a>
                         </li>
                     </ul>
                 </div>
@@ -137,6 +140,8 @@
             <dt class="col-sm-3">Abholbereit</dt>
             <?php echo "<dd class='col-sm-9'>" . datum() . "</dd>"?>
         </dl>
+        <button class="btn btn-outline-light btn-block" onclick="location.href = 'home.html';">Zurück zum Home</button>
+        <button class="btn btn-outline-light btn-block" onclick="location.href = 'auftrag.php';">Zurück zum Auftrag</button>
     </div>
 </body>
 </html>
