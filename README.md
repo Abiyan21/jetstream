@@ -3,7 +3,9 @@ Eine Webseite mit PHP, HTML und CSS für ein Schulprojekt, damit ich mich in die
 
 # INSTRUKTION
 1. Schritt:
-Bitte zuerst den SQL Script durchführen.
+Bitte zuerst den SQL Script in einen lokalen SQL Server durchführen.
 
 2. Schritt:
-Nun können Sie die Seite fehlerfrei benutzen.
+Bitte die Dateien in einen lokalen Web Server ablegen.
+
+Nun können Sie die Webseite nutzen.
