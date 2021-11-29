@@ -1,7 +1,7 @@
 # Jetstream-Service
 Eine Webseite mit PHP, HTML und CSS für ein Schulprojekt, damit ich mich in diesen Programmiersprachen verbessern kann.
 
-#INSTRUKTION
+# INSTRUKTION
 1. Schritt
 Bitte zuerst den SQL Script durchführen.
 
