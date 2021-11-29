@@ -34,6 +34,11 @@
     outline:none;
 }
 
+h6 {
+    border-bottom: 1px solid #fff;
+    margin-bottom: -0.05%;
+}
+
 select option {
     background-color: #161616;
 }

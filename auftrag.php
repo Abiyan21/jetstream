@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <!-- Titel -->
     <div class="container p-3 my-3 bg-dark text-white">
         <h1>Serviceauftrag erstellen</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit obcaecati nostrum eius rem voluptas? Explicabo quos laborum quibusdam ipsa! Beatae, nulla praesentium? Molestiae consequatur officia ullam quas, maiores vel animi!</p>
+        <p style="margin-bottom:-0.5%;">Hier können Sie Ihren Auftrag erstellen!</p>
     </div>
 
   <!-- Eventlist -->

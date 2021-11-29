@@ -25,7 +25,7 @@
     insert_data($kundenname, $email, $tel, $prio, $serv);
 
   } catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    // echo "Connection failed: " . $e->getMessage();
   }
 
 
@@ -56,7 +56,7 @@
         //echo "Erfolgreich gespeichert";
 
       } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        // echo "Error: " . $e->getMessage();
       }
     }
 ?>

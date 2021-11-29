@@ -106,7 +106,8 @@
   <!-- Titel -->
     <div class="container p-3 my-3 bg-dark text-white">
         <h1>Ihre Bestellung</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit obcaecati nostrum eius rem voluptas? Explicabo quos laborum quibusdam ipsa! Beatae, nulla praesentium? Molestiae consequatur officia ullam quas, maiores vel animi!</p>
+        <p style="margin-bottom:-0.5%;">Hier können Sie Ihre Angaben überprüfen.</p>
+        <p style="margin-bottom:-0.5%;">Falls etwas Falsch ist, oder Sie wollen es storniere, bitte eine E-Mail an uns schicken.</p>
     </div>
 
   <!-- Success Alert -->
